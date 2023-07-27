@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.habit_launcher"
+    namespace = "com.timmytruong.habit_launcher"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.habit_launcher"
+        applicationId = "com.timmytruong.habit_launcher"
         minSdk = 24
         targetSdk = 33
         versionCode = 1

@@ -1,4 +1,4 @@
-package com.example.habit_launcher.ui.theme
+package com.timmytruong.habit_launcher.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
