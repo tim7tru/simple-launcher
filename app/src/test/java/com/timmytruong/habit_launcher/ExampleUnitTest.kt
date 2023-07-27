@@ -1,4 +1,4 @@
-package com.example.habit_launcher
+package com.timmytruong.habit_launcher
 
 import org.junit.Test
 
