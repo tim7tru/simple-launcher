@@ -80,6 +80,13 @@ dependencies {
     // JUnit
     testImplementation("junit:junit:4.13.2")
 
+    // Unit Testing
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.0.0")
+    testImplementation("org.robolectric:robolectric:4.9")
+
+    // KoTest Assertions
+    testImplementation("io.kotest:kotest-assertions-core:5.4.2")
+
     // Ui Testing
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
