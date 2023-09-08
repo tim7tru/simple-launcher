@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">habit-launcher</string>
+    <string name="mainActivity">Main Activity</string>
 </resources>
