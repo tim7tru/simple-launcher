@@ -62,6 +62,7 @@ dependencies {
     // Compose
     implementation(platform(Libraries.Compose.BOM))
     implementation(Libraries.Compose.ACTIVITY)
+    implementation(Libraries.Compose.VIEWMODEL)
     implementation(Libraries.Compose.MATERIAL3)
     implementation(Libraries.Compose.UI)
 

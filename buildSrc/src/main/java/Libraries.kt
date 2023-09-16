@@ -9,6 +9,7 @@ object Libraries {
     }
 
     object Compose {
+        private const val VIEWMODEL_VERSION = "2.6.2"
         private const val ACTIVITY_VERSION = "1.7.2"
         private const val BOM_VERSION = "2023.06.01"
         const val COMPILER_VERSION = "1.5.2"
@@ -17,6 +18,7 @@ object Libraries {
         const val ACTIVITY = "androidx.activity:activity-compose:$ACTIVITY_VERSION"
         const val UI = "androidx.compose.ui:ui"
         const val MATERIAL3 = "androidx.compose.material3:material3"
+        const val VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-compose:$VIEWMODEL_VERSION"
     }
 
     object Accompanist {
