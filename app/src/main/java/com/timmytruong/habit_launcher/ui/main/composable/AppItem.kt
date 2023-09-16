@@ -1,7 +1,9 @@
 package com.timmytruong.habit_launcher.ui.main.composable
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -14,11 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.timmytruong.habit_launcher.data.AppInfo
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 internal fun AppItem(
     modifier: Modifier = Modifier,
     appInfo: AppInfo,
-    onClick: (AppInfo) -> Unit
+    onClick: (AppInfo) -> Unit,
+    onLongClick: (AppInfo) -> Unit
 ) {
     val color = MaterialTheme.colorScheme.primary
 
@@ -26,7 +30,10 @@ internal fun AppItem(
         modifier = modifier
             .padding(16.dp)
             .fillMaxWidth()
-            .clickable { onClick(appInfo) },
+            .combinedClickable(
+                onClick = { onClick(appInfo) },
+                onLongClick = { onLongClick(appInfo) }
+            ),
         verticalAlignment = Alignment.CenterVertically,
         content = {
             Canvas(modifier = Modifier.size(12.dp)) { drawCircle(color = color) }

@@ -23,7 +23,8 @@ internal fun AppList(
         items(apps.value) {
             AppItem(
                 appInfo = it,
-                onClick = viewModel::onAppPressed
+                onClick = viewModel::onAppPressed,
+                onLongClick = viewModel::onAppLongPressed
             )
         }
     }

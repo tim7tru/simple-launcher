@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.timmytruong.habit_launcher.data.AppInfo
 import com.timmytruong.habit_launcher.data.AppListProvider
+import com.timmytruong.habit_launcher.data.BottomSheetState
 import com.timmytruong.habit_launcher.data.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
@@ -24,6 +25,9 @@ class MainActivityViewModel @Inject constructor(
     private  val _eventsFlow = MutableSharedFlow<Event>()
     val eventsFlow: Flow<Event> = _eventsFlow
 
+    private val _bottomSheetState = MutableStateFlow<BottomSheetState>(BottomSheetState.Closed)
+    val bottomSheetState: StateFlow<BottomSheetState> = _bottomSheetState
+
     fun fetchApps() {
         viewModelScope.launch {
             val appData = appListProvider.getApps()
@@ -35,6 +39,24 @@ class MainActivityViewModel @Inject constructor(
     fun onAppPressed(appInfo: AppInfo) {
         viewModelScope.launch {
             _eventsFlow.emit(Event.NavigateToPackage(packageName = appInfo.packageName))
+        }
+    }
+
+    fun onAppLongPressed(appInfo: AppInfo) {
+        viewModelScope.launch {
+            _bottomSheetState.emit(BottomSheetState.OpenedOnApp(appInfo = appInfo))
+        }
+    }
+
+    fun closeBottomSheet() {
+        viewModelScope.launch {
+            _bottomSheetState.emit(BottomSheetState.Closed)
+        }
+    }
+
+    fun onBackgroundLongClick() {
+        viewModelScope.launch {
+            _bottomSheetState.emit(BottomSheetState.OpenedOnBackground)
         }
     }
 }
