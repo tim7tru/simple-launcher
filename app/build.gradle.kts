@@ -7,19 +7,20 @@ plugins {
 
 android {
     namespace = "com.timmytruong.habit_launcher"
-    compileSdk = 33
+    compileSdk = Config.SdkVersions.COMPILE
 
     defaultConfig {
-        applicationId = "com.timmytruong.habit_launcher"
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Config.APP_ID
+        minSdk = Config.SdkVersions.MIN
+        targetSdk = Config.SdkVersions.TARGET
+        versionCode = Config.VERSION_CODE
+        versionName = Config.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
+        compileSdkPreview = "UpsideDownCake"
     }
 
     buildTypes {
@@ -42,45 +43,38 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = Libraries.Compose.COMPILER_VERSION
     }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    testOptions {
-        unitTests.isReturnDefaultValues = true
-    }
 }
 
 dependencies {
 
-    // UI
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.activity:activity-compose:1.7.2")
-    implementation(platform("androidx.compose:compose-bom:2023.09.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.material3:material3")
+    // AndroidX
+    implementation(Libraries.AndroidX.CORE_KTX)
+    implementation(Libraries.AndroidX.LIFECYCLE_KTX)
+    implementation(Libraries.AndroidX.VIEWMODEL)
+
+    // Compose
+    implementation(platform(Libraries.Compose.BOM))
+    implementation(Libraries.Compose.ACTIVITY)
+    implementation(Libraries.Compose.MATERIAL3)
+    implementation(Libraries.Compose.UI)
 
     // Accompanist
-    implementation("com.google.accompanist:accompanist-drawablepainter:0.33.1-alpha")
-
-
-    // Lifecycle
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1")
+    implementation(Libraries.Accompanist.DRAWABLE_PAINTER)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.47")
-    kapt("com.google.dagger:hilt-android-compiler:2.47")
+    implementation(Libraries.Hilt.HILT)
+    kapt(Libraries.Hilt.COMPILER)
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation(Libraries.Coroutines.CORE)
+    implementation(Libraries.Coroutines.ANDROID)
 
     // JUnit
     testImplementation("junit:junit:4.13.2")
@@ -98,8 +92,4 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-
-    // Compose Tooling
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
