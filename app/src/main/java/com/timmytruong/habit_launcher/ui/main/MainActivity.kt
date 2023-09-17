@@ -13,6 +13,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.lifecycleScope
+import com.timmytruong.habit_launcher.data.BottomSheetState
 import com.timmytruong.habit_launcher.data.Event
 import com.timmytruong.habit_launcher.ui.main.composable.AppList
 import com.timmytruong.habit_launcher.ui.menu.composable.MenuBottomSheet
@@ -42,7 +43,10 @@ class MainActivity : ComponentActivity() {
                 ) {
                     AppList(viewModel = viewModel)
                     if (bottomSheetState.isVisible) {
-                        MenuBottomSheet(onDismissRequest = viewModel::closeBottomSheet)
+                        MenuBottomSheet(
+                            onDismissRequest = viewModel::closeBottomSheet,
+                            appInfo = (bottomSheetState as? BottomSheetState.OpenedOnApp)?.appInfo,
+                        )
                     }
                 }
             }
