@@ -1,4 +1,4 @@
-package com.timmytruong.habit_launcher.di
+package com.timmytruong.simplelauncher.di
 
 import android.content.Context
 import dagger.Module

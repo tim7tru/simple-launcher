@@ -1,4 +1,4 @@
-package com.timmytruong.habit_launcher.data
+package com.timmytruong.simplelauncher.data
 
 import android.graphics.drawable.Drawable
 

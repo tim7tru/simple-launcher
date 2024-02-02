@@ -1,4 +1,4 @@
-package com.timmytruong.habit_launcher.data
+package com.timmytruong.simplelauncher.data
 
 import android.content.Intent
 import android.content.pm.ActivityInfo

@@ -1,4 +1,4 @@
-package com.timmytruong.habit_launcher.ui.menu
+package com.timmytruong.simplelauncher.ui.menu
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

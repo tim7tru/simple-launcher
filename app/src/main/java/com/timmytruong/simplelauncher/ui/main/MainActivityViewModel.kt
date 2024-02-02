@@ -1,11 +1,11 @@
-package com.timmytruong.habit_launcher.ui.main
+package com.timmytruong.simplelauncher.ui.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.timmytruong.habit_launcher.data.AppInfo
-import com.timmytruong.habit_launcher.data.AppListProvider
-import com.timmytruong.habit_launcher.data.BottomSheetState
-import com.timmytruong.habit_launcher.data.Event
+import com.timmytruong.simplelauncher.data.AppInfo
+import com.timmytruong.simplelauncher.data.AppListProvider
+import com.timmytruong.simplelauncher.data.BottomSheetState
+import com.timmytruong.simplelauncher.data.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow

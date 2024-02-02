@@ -1,4 +1,4 @@
-package com.timmytruong.habit_launcher.ui.main
+package com.timmytruong.simplelauncher.ui.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,10 +13,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.lifecycleScope
-import com.timmytruong.habit_launcher.data.Event
-import com.timmytruong.habit_launcher.ui.main.composable.AppList
-import com.timmytruong.habit_launcher.ui.menu.composable.MenuBottomSheet
-import com.timmytruong.habit_launcher.ui.theme.MainActivityTheme
+import com.timmytruong.simplelauncher.data.Event
+import com.timmytruong.simplelauncher.ui.main.composable.AppList
+import com.timmytruong.simplelauncher.ui.menu.composable.MenuBottomSheet
+import com.timmytruong.simplelauncher.ui.theme.MainActivityTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

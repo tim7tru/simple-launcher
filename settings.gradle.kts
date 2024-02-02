@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "habit-launcher"
+rootProject.name = "simple-launcher"
 include(":app")
  
