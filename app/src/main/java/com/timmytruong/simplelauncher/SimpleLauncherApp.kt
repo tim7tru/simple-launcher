@@ -1,7 +1,7 @@
-package com.timmytruong.habit_launcher
+package com.timmytruong.simplelauncher
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class HabitLauncherApp: Application()
+class SimpleLauncherApp: Application()

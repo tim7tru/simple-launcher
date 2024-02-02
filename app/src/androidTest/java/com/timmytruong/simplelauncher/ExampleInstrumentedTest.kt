@@ -1,4 +1,4 @@
-package com.timmytruong.habit_launcher
+package com.timmytruong.simplelauncher
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.timmytruong.habit_launcher", appContext.packageName)
+        assertEquals("com.timmytruong.simple_launcher", appContext.packageName)
     }
 }

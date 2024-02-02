@@ -1,4 +1,4 @@
-package com.timmytruong.habit_launcher.ui.theme
+package com.timmytruong.simplelauncher.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

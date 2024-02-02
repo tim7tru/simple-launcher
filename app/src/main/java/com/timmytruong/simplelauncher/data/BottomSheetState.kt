@@ -1,4 +1,4 @@
-package com.timmytruong.habit_launcher.data
+package com.timmytruong.simplelauncher.data
 
 sealed class BottomSheetState {
     abstract val isVisible: Boolean

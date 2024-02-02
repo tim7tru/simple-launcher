@@ -1,4 +1,4 @@
-package com.timmytruong.habit_launcher.ui.main.composable
+package com.timmytruong.simplelauncher.ui.main.composable
 
 import android.graphics.drawable.Drawable
 import androidx.compose.foundation.Image
@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
-import com.timmytruong.habit_launcher.R
+import com.timmytruong.simplelauncher.R
 
 @Composable
 internal fun AppIcon(

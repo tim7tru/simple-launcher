@@ -1,8 +1,7 @@
-package com.timmytruong.habit_launcher.ui.main.composable
+package com.timmytruong.simplelauncher.ui.main.composable
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,7 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.timmytruong.habit_launcher.data.AppInfo
+import com.timmytruong.simplelauncher.data.AppInfo
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
