@@ -32,11 +32,15 @@ class AppListProviderTest {
 
     @Test
     fun `Given packageManager, when getApps is called, then queryIntentActivities is called with correct intent`() {
-        val captor = argumentCaptor<Intent>()
         subject.getApps()
+
+        val captor = argumentCaptor<Intent>()
         verify(packageManager).queryIntentActivities(captor.capture(), eq(0))
-        captor.lastValue.categories.firstOrNull() shouldBe Intent.CATEGORY_LAUNCHER
-        captor.lastValue.action shouldBe Intent.ACTION_MAIN
+        with(captor.lastValue) {
+            categories.size shouldBe 1
+            categories.firstOrNull() shouldBe Intent.CATEGORY_LAUNCHER
+            action shouldBe Intent.ACTION_MAIN
+        }
     }
 
     @Test
@@ -44,16 +48,17 @@ class AppListProviderTest {
         val mockDrawable = mock<Drawable>()
         val mockActivityInfo = mock<ActivityInfo> {
             on { loadIcon(any()) } doReturn mockDrawable
-            on { packageName } doReturn "package name"
+        }.apply {
+            packageName = "package name"
         }
         val mockResolveInfo = mock<ResolveInfo> {
             on { loadLabel(any()) } doReturn "app name"
-            on { activityInfo } doReturn mockActivityInfo
+        }.apply {
+            activityInfo = mockActivityInfo
         }
         whenever(packageManager.queryIntentActivities(any(), any<Int>())).thenReturn(listOf(mockResolveInfo))
 
         val result = subject.getApps()
-
         with(result.firstOrNull()!!) {
             label shouldBe "app name"
             packageName shouldBe "package name"
