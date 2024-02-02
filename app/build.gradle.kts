@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.timmytruong.simple_launcher"
+    namespace = "com.timmytruong.simplelauncher"
     compileSdk = Config.SdkVersions.COMPILE
 
     defaultConfig {
